@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Backend Nicolandia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row content">
+
+
+        <div class="col-sm-9">
+            <h1>List of doctors
+                <img src="../static/imgs/Logo.png" th:src="@{/imgs/Logo.png}">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Busqueda de pacientes">
+                    <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+                </div>
+            </h1>
+
+
+            <hr>
+            <table class="table table-bordered">
+
+
+                <tr th:each= "doctor : ${listDoctor}">
+                    <td class="text-left" th:text="${doctor.name}"></td>
+                    <td class="text-left" th:text="${doctor.lastname}">/td>
+                    <td class="text-left"><div class="btn-group btn-group-xs" role="group" aria-label="...">
+                        <button type="button" class="btn btn-info">
+                            <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Ver</button>
+
+                        <button class="btn btn-warning">
+                            <span class="glyphicon glyphicon-pencil" aria-hidden="true">Editar</span></button>
+
+                        <button type="button" class="btn btn-danger">
+                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Borrar</button>
+                    </td>
+                </tr>
+
+
+
+
+
+            </table>
+
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+</body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../static/css/style.css" media="screen" type="text/css" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>

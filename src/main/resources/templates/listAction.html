@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Backend Nicolandia</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row content">
+
+
+        <div class="col-sm-9">
+            <h1>Lista de acciones
+
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Busqueda de acciones">
+                    <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+                </div>
+            </h1>
+
+
+            <hr>
+
+            <table class="table table-bordered" >
+
+                <div th:object="${listAction1}">
+
+                    <tr th:each= "action : ${listAction1}">
+
+                        <td class="text-left" th:text="${action.idAction}"></td>
+                        <td class="text-left" th:text="${action.nameAction}"></td>
+
+
+                        <td class="text-left"><div class="btn-group btn-group-xs" role="group" aria-label="...">
+                            <button type="button" class="btn btn-info">
+                                <span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span> Ver</button>
+
+                            <button class="btn btn-warning">
+                                <span class="glyphicon glyphicon-pencil" aria-hidden="true">Editar</span></button>
+
+                            <button type="button" class="btn btn-danger">
+                                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>Borra</button>
+                        </td>
+                    </tr>
+                </div>
+
+
+
+
+            </table>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+</body>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</html>
+

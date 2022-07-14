@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>HOla</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+</head>
+<body>
+<section class="vh-100 gradient-custom">
+    <div class="container py-5 h-100">
+        <div class="row justify-content-center align-items-center h-100">
+            <div class="col-12 col-lg-9 col-xl-7">
+                <div class="card shadow-2-strong card-registration" style="border-radius: 15px;">
+                    <div class="card-body p-4 p-md-5">
+                        <h3 class="mb-4 pb-2 pb-md-0 mb-md-5">Add a Treatment</h3>
+                        <form th:action="@{/treatmentController/add}" th:object="${treatment} " method="post">
+
+                            <input type="hidden" th:if="${treatment.idTreatment != null}" th:field="${treatment.idTreatment}" />
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4">
+
+                                    <div class="form-outline">
+                                        <input type="text" id="firstName" class="form-control form-control-lg" th:field="${treatment.name}" />
+                                        <label class="form-label" for="firstName">name</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 mb-4 d-flex align-items-center">
+
+                                    <div class="form-outline datepicker w-100">
+                                        <input type="text" class="form-control form-control-lg" id="Date" th:field="${treatment.init}" />
+                                        <label for="Date" class="form-label">init Date</label>
+                                    </div>
+
+                                    <div class="form-outline datepicker w-100">
+                                        <input type="text" class="form-control form-control-lg" for="Date"  th:field="${treatment.end}" />
+                                        <label for="Date" class="form-label">end Date</label>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-12">
+
+                                    <<<<<<< HEAD
+                                    <select th:field="${actionDTO.id}" class="select form-control-lg" >
+                                        =======
+                                        <select th:field="${actionModel.idAction}" class="select form-control-lg" >
+                                            >>>>>>> 96235ac0df5e1f30a334c0082e404e3cf440a052
+                                            <option th:each="action : ${actionList}"
+                                                    th:value ="${action.idAction}"
+                                                    th:text="${action.nameAction}"
+                                                    th:selected="true"
+                                            />
+                                        </select>
+                                        <label class="form-label select-label">Select an action</label>
+                                </div>
+                            </div>
+
+                            <div class="mt-4 pt-2">
+                                <input class="btn btn-primary btn-lg" type="submit" value="Guardar" />
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+</body>
+</html>
